@@ -10,7 +10,15 @@ function App() {
           <Dictionary />
         </main>
         <footer className="text-center">
-          <small>Coded by Kata Acs</small>
+        <small>
+        <a
+          href="https://github.com/acskata/dictionary-project"
+          target="_blank" rel="noreferrer"
+        >
+          Open-sourced
+        </a>
+        <span> by Kata Acs</span>
+      </small>
         </footer>
       </div>
     </div>
