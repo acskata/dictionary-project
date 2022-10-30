@@ -1,12 +1,20 @@
 import React, { useState }from "react";
+import axios from "axios";
 import "./Dictionary.css";
 
 export default function Dictionary() {
     let [keyword, setKeyword] = useState("");
 
+    function handleResponse(response) {
+        console.log(response.data[0]);
+    }
+
     function search(event) {
         event.preventDeafult();
-        alert(`Searching for ${keyword} definition`);
+
+        let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
+        axios.get(apiUrl).then(handleResponse);
+        return <p>Loading...</p>
     }
 
     function handleKeywordChange(event) {
@@ -37,13 +45,13 @@ export default function Dictionary() {
                 <p>Similar: xy, xy, xy</p>
                 <div className="row">
                     <div className="col-4">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFcNLvwqAhkhkdDOg0FBDQ8foSq-8PK3sPAA&usqp=CAU" class="img-fluid rounded-2" alt="result"/>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFcNLvwqAhkhkdDOg0FBDQ8foSq-8PK3sPAA&usqp=CAU" className="img-fluid rounded-2" alt="result"/>
                     </div>
                     <div className="col-4">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFcNLvwqAhkhkdDOg0FBDQ8foSq-8PK3sPAA&usqp=CAU" class="img-fluid rounded-2" alt="result"/>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFcNLvwqAhkhkdDOg0FBDQ8foSq-8PK3sPAA&usqp=CAU" className="img-fluid rounded-2" alt="result"/>
                     </div>
                     <div className="col-4">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFcNLvwqAhkhkdDOg0FBDQ8foSq-8PK3sPAA&usqp=CAU" class="img-fluid rounded-2" alt="result"/>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFcNLvwqAhkhkdDOg0FBDQ8foSq-8PK3sPAA&usqp=CAU" className="img-fluid rounded-2" alt="result"/>
                     </div>
                 </div>
         </div>
