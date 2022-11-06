@@ -10,6 +10,7 @@ export default function Results(props) {
                 <section>
                  <h2 className="text-capitalize">{props.results.word}</h2>
                  {props.results.phonetics.map(function(phonetic, index){
+                    if (phonetic.audio.length === 0) return <></>;
                     return (
                         <div key={index}>
                             <Phonetic phonetic={phonetic} />
