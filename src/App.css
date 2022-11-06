@@ -2,19 +2,19 @@ footer {
     margin: 15px 0;
 }
 
+a {
+    color: #CCC5B9;
+    text-decoration: none;
+    transition: all 150ms ease-in-out;
+}
+
+a:hover {
+    font-weight: bold;
+    color: #CCC5B9;
+}
+
 .App {
-    max-width: 600px;
+    max-width: 900px;
     margin: 0 auto;
     padding-top: 30px;
-}
-
-.App main {
-    padding: 20px;
-    border: 1px solid #8d99ae;
-    border-radius: 10px;
-}
-
-.App a {
-    text-decoration: none;
-    color: #ef233c;
 }
