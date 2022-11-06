@@ -6,13 +6,13 @@ export default function Synonyms(props) {
             <div className="Synonyms">
                 <strong>Synonyms:</strong>
                 <ul>
-                    {props.synonyms.map(function (synonym, index) {
+                {props.synonyms.map(function (synonym, index) {
                         return <li key={index}>{synonym}</li>;
                     })}
                 </ul>
             </div>
         );
-    }   else {
+    } else {
         return null;
     }
 }

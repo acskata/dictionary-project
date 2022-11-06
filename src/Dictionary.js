@@ -5,10 +5,10 @@ import "./Dictionary.css";
 
 export default function Dictionary() {
     let [keyword, setKeyword] = useState("");
-    let [result, setResult] = useState(null);
+    let [results, setResults] = useState(null);
 
     function handleResponse(response) {
-        setResult(response.data[0]);
+        setResults(response.data[0]);
     }
 
     function search(event) {
@@ -28,7 +28,7 @@ export default function Dictionary() {
             <form onSubmit={search}>
                 <input type="search" onChange={handleKeywordChange} placeholder="Search for a word" autoFocus="on"/>
             </form>
-            <Results result={result} />
+            <Results results={results} />
         </div>
     );
 }
